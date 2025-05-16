@@ -1,3 +1,0 @@
-train:
-  feaures: "price"
-  targeet: ["square_feet", "bedrooms", "location_score"]

@@ -1,0 +1,17 @@
+stages:
+  preprocess:
+    cmd: python src/preprocessor.py data/raw.csv data/preprocess.csv
+    deps:
+      - data/raw.csv
+      - src/preprocessor.py
+    outs:
+      - data/preprocess.csv
+
+  train_model:
+    cmd: python src/train.py data/preprocess.csv model/model.pkl metrics/metrics.txt
+    deps:
+      - data/preprocess.csv
+      - src/train.py
+    outs:
+      - model/model.pkl
+      - metrics/metrics.txt
